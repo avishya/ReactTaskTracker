@@ -13,6 +13,7 @@ const TaskDetails = () => {
   const [error, setError] = useState(null);
 
   const params = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTask = async () => {
@@ -20,7 +21,7 @@ const TaskDetails = () => {
       const data = await res.json();
 
       if (res.status === 404) {
-        setError("Task not found");
+        navigate("/");
       }
 
       setTask(data);
@@ -29,9 +30,9 @@ const TaskDetails = () => {
     fetchTask();
   });
 
-  if (error) {
-    return <Navigate to="/" />;
-  }
+  //   if (error) {
+  //     return <Navigate to="/" />;
+  //   }
 
   return loading ? (
     <h3>Loading...</h3>
