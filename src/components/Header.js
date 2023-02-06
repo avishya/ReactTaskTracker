@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Button from "./Button";
 
-const Header = ({ title, onClickAddTask }) => {
+const Header = ({ title, onClickAddTask, showAdd }) => {
   const onClickAction = () => {
     console.log("Clicked111");
   };
@@ -9,7 +9,11 @@ const Header = ({ title, onClickAddTask }) => {
   return (
     <header className="header">
       <h1>{title}</h1>
-      <Button color="green" text="Add" onClickProp={onClickAddTask} />
+      <Button
+        color={showAdd ? "red" : "green"}
+        text={showAdd ? "Close" : "Add"}
+        onClickProp={onClickAddTask}
+      />
     </header>
   );
 };

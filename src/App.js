@@ -55,7 +55,10 @@ function App() {
 
   return (
     <div className="container">
-      <Header onClickAddTask={() => setShowAddTask(!showAddTask)} />
+      <Header
+        onClickAddTask={() => setShowAddTask(!showAddTask)}
+        showAdd={showAddTask}
+      />
       {showAddTask && <AddTask onSaveTaskProp={saveTask} />}
       {tasks.length > 0 ? (
         <Tasks
