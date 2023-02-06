@@ -3,10 +3,15 @@ import Button from './Button'
 
 
 const Header = ({ title }) => {
+
+    const onClickAction = () => {
+        console.log('Clicked111')
+    }
+    
   return (
     <header className='header'>
       <h1>{title}</h1>
-      <Button color='green' text='Add' />
+      <Button color='green' text='Add' onClickProp={onClickAction} />
     </header>
   )
 }
