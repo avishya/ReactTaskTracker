@@ -29,6 +29,9 @@ function App() {
   //Save Task
   const saveTask = (task) => {
     console.log(task);
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const newTask = { id, ...task };
+    setTasks([...tasks, newTask]);
   };
 
   // Delete Task
