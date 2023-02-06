@@ -40,6 +40,12 @@ const TaskDetails = () => {
     <div>
       <h3>{task.text}</h3>
       <p>{task.day}</p>
+      <Button
+        text="Go Back"
+        onClick={() => {
+          navigate(-1);
+        }}
+      />
     </div>
   );
 };
